@@ -1,7 +1,7 @@
 // Assignment code here
 var numericalChar = "0123456789";
-var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
-var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
+var upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var specialChar = "<,>.?/:;'{[}]|\+=_-)(*&^%$#@!~`";
 // Create a series of prompts for password criteria
 // Create a prompt for the length of the password
@@ -12,7 +12,7 @@ var specialChar = "<,>.?/:;'{[}]|\+=_-)(*&^%$#@!~`";
 
 var generatePassword = function () {
 // create two new variable for this prompt
-var password = "";
+var passPharse = "";
 var randomChar = "";
   // create prompt asking user to choice password length
   var  randomLength = window.prompt("How many characters would you like your password to be? Password must be between 8-128 characters.");
@@ -47,20 +47,20 @@ console.log(numberChoice);
 
 // create confirm lowercase letters in the password "yes or no"
 // create a new variable for this prompt
-var lowercaseChoice = window.confirm("Would you like the password to contain lowercase letters?");
+var lowerCaseChoice = window.confirm("Would you like the password to contain lowercase letters?");
     // create a 
-    if(lowercaseChoice)
-    {randomChar += lowercaseChar;}
+    if(lowerCaseChoice)
+    {randomChar += lowerCaseChar;}
 
-    console.log(lowercaseChoice);
+    console.log(lowerCaseChoice);
 
 // create confirm uppercase letters in the password "yes or no"
 // create a new variable for this prompt
-var uppercaseChoice = window.confirm("Would you like the password to contain uppercase letters?");
+var upperCaseChoice = window.confirm("Would you like the password to contain uppercase letters?");
     
-     if(uppercaseChoice){randomChar += uppercaseChar;}
+     if(upperCaseChoice){randomChar += upperCaseChar;}
 
-     console.log(uppercaseChoice);
+     console.log(upperCaseChoice);
 
     // create confirm special characters in the password "yes or no"    
     // create a new variable for the prompt
@@ -70,9 +70,12 @@ var uppercaseChoice = window.confirm("Would you like the password to contain upp
 
 
   for (var i = 0; i < randomLength; i++) {
-    password = randomChar [Math.floor(Math.random() * randomChar.length)];
-  } 
+    passPharse = randomChar [Math.floor(Math.random() * randomChar.length)];
+    // this is where the problem is. Can't get the variable to display the password. It just displays the number of characters
+} 
   
+  debugger;
+
   };
 
 
@@ -80,7 +83,7 @@ var uppercaseChoice = window.confirm("Would you like the password to contain upp
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword(randomPassword) {
+function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
