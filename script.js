@@ -12,7 +12,7 @@ var specialChar = "<,>.?/:;'{[}]|\+=_-)(*&^%$#@!~`";
 
 var generatePassword = function () {
 // create two new variable for this prompt
-var randomPassword = "";
+var password = "";
 var randomChar = "";
   // create prompt asking user to choice password length
   var  randomLength = window.prompt("How many characters would you like your password to be? Password must be between 8-128 characters.");
@@ -30,6 +30,11 @@ var randomChar = "";
     window.alert("Password length must be less than 128 characters. Please try again!");
     return generatePassword ();
   }
+
+  if(!randomLength) {window.alert("Please enter a valid response!");
+return generatePassword();
+}
+
   console.log(randomLength);
 
 // create confirm numbers in the password "yes or no"
@@ -63,9 +68,9 @@ var uppercaseChoice = window.confirm("Would you like the password to contain upp
     // create a 
     if(specialCharChoice){randomChar += specialChar;}
 
-debugger;
+
   for (var i = 0; i < randomLength; i++) {
-    randomPassword = randomChar (Math.floor(Math.random() * randomChar.length));
+    password = randomChar [Math.floor(Math.random() * randomChar.length)];
   } 
   
   };
@@ -80,24 +85,9 @@ function writePassword(randomPassword) {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  return("");
-
-}
-
 console.log(writePassword);
 
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
