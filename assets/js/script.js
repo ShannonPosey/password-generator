@@ -69,13 +69,12 @@ var upperCaseChoice = window.confirm("Would you like the password to contain upp
     if(specialCharChoice){randomChar += specialChar;}
 
 
-  for (var i = 0; i < randomLength; i++) {
-    passPharse = randomChar [Math.floor(Math.random() * randomChar.length)];
-    // this is where the problem is. Can't get the variable to display the password. It just displays the number of characters
-} 
+  for (var i = 0, n = randomChar.length; i < randomLength; i++) {
+    passPharse += randomChar [Math.floor(Math.random() * n)];
+    
+  } 
   
-  debugger;
-
+  return passPharse;
   };
 
 
